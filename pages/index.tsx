@@ -4,6 +4,7 @@ import xml2js from "xml2js";
 
 import { useEffect, useState } from 'react'
 import { CharityResponse, Project } from './types/ProjectTypes';
+import { AirbnbCard } from './components/Card';
 
 const Home: NextPage = () => {
   const [image, setImage] = useState<string | undefined>("")
@@ -32,13 +33,12 @@ const Home: NextPage = () => {
   }, [image])
 
   return (
+
     <div>
       {project?.map((project, index) => {
+        console.log(project.image.at(0)?.imagelink[3].url.at(0));
         return (
-          <div key={index}>
-            <p>{project.title}</p>
-            <img src={project.image.at(0)?.imagelink[3].url.at(0)} />
-          </div>
+          <AirbnbCard imageUrl={project.image.at(0)?.imagelink[3].url.at(0)} key={index} />
         )
       })}
     </div>
