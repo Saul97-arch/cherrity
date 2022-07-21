@@ -4,9 +4,13 @@ export type ImageLink = {
     title: string;
 };
 
+export type AirbnbCardProps = {
+    imageUrl?: string
+}
+
 export type CharityResponse = {
     projects: DataProject;
-  };
+};
   
 export type Image = {
     $: { id: string },
