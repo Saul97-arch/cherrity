@@ -5,13 +5,13 @@ import { AirbnbCardProps } from "../types/ProjectTypes"
 // https://fettblog.eu/typescript-react/prop-types/
 export function AirbnbCard({ imageUrl, projectName, regions }: AirbnbCardProps) {
     return (
-        <Box maxW='sm' borderWidth='0px' borderRadius='xl' overflow='hidden' bg="#6EB4D1">
+        <Box maxW='sm' borderWidth='0px' borderRadius='xl' overflow='hidden' bg="#6EB4D1" mb="8">
             <Image src={imageUrl} />
 
             <Box p='6'>
                 <Box display='flex' alignItems='baseline'>
                     {
-                        <Badge borderRadius='full' px='2' colorScheme='teal'>
+                        <Badge borderRadius='full' px='0.5' colorScheme='teal'>
                             {regions?.at(0)}
                         </Badge>
                     }

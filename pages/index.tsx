@@ -41,15 +41,17 @@ const Home: NextPage = () => {
           <Text>Cherrity</Text>
         </Center>
       </Flex>
-      <Grid templateColumns='repeat(5, 1fr)' gap={6}>
-
+      <Flex direction={"column"} align="center" p="4">
         {project?.map((project, index) => {
           // console.log(project.image.at(0)?.imagelink[3].url.at(0));
           return (
             <AirbnbCard imageUrl={project.image.at(0)?.imagelink[3].url.at(0)} key={index} projectName={project.title[0]} regions={project.region} />
           );
         })}
-      </Grid>
+      </Flex>
+      <Flex h="24vh" bg="#91B7C7">
+
+      </Flex>
     </div>
 
   )
