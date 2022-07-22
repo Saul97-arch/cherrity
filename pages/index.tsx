@@ -1,10 +1,12 @@
 import type { NextPage } from 'next'
 import axios from 'axios';
 import xml2js from "xml2js";
-
+import { Grid, GridItem } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { CharityResponse, Project } from './types/ProjectTypes';
 import { AirbnbCard } from './components/Card';
+import { Flex, Spacer, Center, Text } from '@chakra-ui/react'
+
 
 const Home: NextPage = () => {
   const [image, setImage] = useState<string | undefined>("")
@@ -30,18 +32,26 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     getData()
-  }, [image])
+  }, [])
 
   return (
-
     <div>
-      {project?.map((project, index) => {
-        console.log(project.image.at(0)?.imagelink[3].url.at(0));
-        return (
-          <AirbnbCard imageUrl={project.image.at(0)?.imagelink[3].url.at(0)} key={index} />
-        )
-      })}
+      <Flex h="14vh" bg="#91B7C7" mb="16">
+        <Center w='100px' bg='green.500'>
+          <Text>Cherrity</Text>
+        </Center>
+      </Flex>
+      <Grid templateColumns='repeat(5, 1fr)' gap={6}>
+
+        {project?.map((project, index) => {
+          // console.log(project.image.at(0)?.imagelink[3].url.at(0));
+          return (
+            <AirbnbCard imageUrl={project.image.at(0)?.imagelink[3].url.at(0)} key={index} projectName={project.title[0]} regions={project.region} />
+          );
+        })}
+      </Grid>
     </div>
+
   )
 }
 

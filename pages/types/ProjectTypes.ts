@@ -5,7 +5,9 @@ export type ImageLink = {
 };
 
 export type AirbnbCardProps = {
-    imageUrl?: string
+    projectName?: string;
+    imageUrl?: string;
+    regions?: Array<string>
 }
 
 export type CharityResponse = {
@@ -24,7 +26,7 @@ export type CountryData = {
 
 
 export type CountryItem = {
-    country: Array<CountryData>
+    country: Array<CountryData>;
 };
 
 
@@ -37,7 +39,7 @@ export type DataProject = {
 
 
 export type Theme = {
-    theme: Array<ThemeData>
+    theme: Array<ThemeData>;
 };
 
 
@@ -70,5 +72,5 @@ export type Project = {
     status: Array<string>;
     summary: Array<string>;
     title: Array<string>;
-    themes: Array<Theme>
+    themes: Array<Theme>;
 };
