@@ -11,7 +11,7 @@ export type AirbnbCardProps = {
 export type CharityResponse = {
     projects: DataProject;
 };
-  
+
 export type Image = {
     $: { id: string },
     imagelink: Array<ImageLink>
@@ -48,19 +48,19 @@ export type ThemeData = {
 
 
 export type Project = {
-    active: string;
-    activities: string;
-    additionalDocumentation: string;
-    contactAddress: string;
-    contactAddress2: string;
-    contactCity: string;
-    contactCountry: string;
-    contactUrl: string;
+    active: Array<string>;
+    activities: Array<string>;
+    additionalDocumentation: Array<string>;
+    contactAddress: Array<string>;
+    contactAddress2: Array<string>;
+    contactCity: Array<string>;
+    contactCountry: Array<string>;
+    contactUrl: Array<string>;
     countries: Array<CountryItem>;
     country: Array<string>;
-    funding: string;
-    goal: string;
-    id: string;
+    funding: Array<string>;
+    goal: Array<string>;
+    id: Array<string>;
     image: Array<Image>;
     longTermImpact: Array<string>;
     need: Array<String>;
@@ -70,5 +70,7 @@ export type Project = {
     status: Array<string>;
     summary: Array<string>;
     title: Array<string>;
-    themes: Array<Theme>
+    themes: Array<Theme>;
+    hasNext : Array<string>;
+    nextProjectId : Array<string>;
 };
