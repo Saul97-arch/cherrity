@@ -5,7 +5,8 @@ export type ImageLink = {
 };
 
 export type AirbnbCardProps = {
-    imageUrl?: string
+    imageUrl?: string;
+    imgDescription?: string;
 }
 
 export type CharityResponse = {

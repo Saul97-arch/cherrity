@@ -1,10 +1,10 @@
 import { Badge, Box, Image } from "@chakra-ui/react"
 import { AirbnbCardProps } from "../types/ProjectTypes"
 
-export function AirbnbCard({imageUrl}: AirbnbCardProps) {
+export function AirbnbCard({imageUrl, imgDescription}: AirbnbCardProps) {
     return (
         <Box maxW='sm' borderWidth='16px' borderRadius='lg' overflow='hidden'>
-            <Image src={imageUrl} />
+            <Image src={imageUrl} alt={imgDescription}/>
 
             <Box p='6'>
                 <Box display='flex' alignItems='baseline'>
